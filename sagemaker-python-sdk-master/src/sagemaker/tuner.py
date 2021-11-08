@@ -272,7 +272,7 @@ class HyperparameterTuner(object):
                 hyperparameter tuning job, when more than one estimator is used with
                 the same tuning job (default: None).
         """
-        if hyperparameter_ranges is None or len(hyperparameter_ranges) == 0:
+        if not hyperparameter_ranges:
             raise ValueError("Need to specify hyperparameter ranges")
 
         if estimator_name is not None:
