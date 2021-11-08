@@ -43,6 +43,8 @@ NO_DOUBLE_PATCH = (
 
 _PATCHED_MODULES = set()
 
+class PatchingException(Exception):
+    pass 
 
 def patch_all(double_patch=False):
     if double_patch:
@@ -181,7 +183,7 @@ def _on_import(module):
 
 def _external_module_patch(module, ignore_module_patterns):
     if module.startswith('.'):
-        raise Exception('relative packages not supported for patching: {}'.format(module))
+        raise PatchingException('relative packages not supported for patching: {}'.format(module))
 
     if module in _PATCHED_MODULES:
         log.debug('%s already patched', module)
