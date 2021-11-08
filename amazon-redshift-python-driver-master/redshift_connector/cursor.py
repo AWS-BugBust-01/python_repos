@@ -146,8 +146,9 @@ class Cursor:
         if self.ps is None:
             return None
         row_desc: typing.List[typing.Dict[str, typing.Union[bytes, int, typing.Callable]]] = self.ps["row_desc"]
-        if len(row_desc) == 0:
+        if not row_desc:
             return None
+
         columns: typing.List[typing.Optional[typing.Tuple]] = []
         for col in row_desc:
             columns.append((col["label"], col["type_oid"], None, None, None, None, None))

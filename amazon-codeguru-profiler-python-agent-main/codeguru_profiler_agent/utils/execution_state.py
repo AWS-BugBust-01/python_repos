@@ -125,7 +125,7 @@ class ExecutionState:
         :return: True if the status is RUNNING at the end. False otherwise.
         """
         is_time_to_execute = False
-        while self._current_state is not ExecutionState.STOPPED and not is_time_to_execute:
+        while self._current_state != ExecutionState.STOPPED and not is_time_to_execute:
             self._time_when_waiting_started = self._clock()
             if self._current_state is ExecutionState.PAUSED:
                 new_state = self._wait_for_resume()

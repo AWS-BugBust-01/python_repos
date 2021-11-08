@@ -1235,9 +1235,7 @@ class InvalidRecipeDirectoryPathError(GreengrassCoreIPCError):
 
     def __repr__(self):
         attrs = []
-        for attr, val in self.__dict__.items():
-            if val is not None:
-                attrs.append('%s=%r' % (attr, val))
+        attrs = ['%s=%r' % (attr, val) for attr, val in self.__dict__.items() if val is not None]
         return '%s(%s)' % (self.__class__.__name__, ', '.join(attrs))
 
     def __eq__(self, other):
