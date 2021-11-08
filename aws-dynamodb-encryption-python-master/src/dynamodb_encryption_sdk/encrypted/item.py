@@ -91,7 +91,7 @@ def encrypt_dynamodb_item(item, crypto_config):
 
         encrypted_item = {}
         for name, attribute in item.items():
-            if crypto_config.attribute_actions.action(name) is CryptoAction.ENCRYPT_AND_SIGN:
+            if crypto_config.attribute_actions.action(name) == CryptoAction.ENCRYPT_AND_SIGN:
                 encrypted_item[name] = encrypt_attribute(
                     attribute_name=name,
                     attribute=attribute,
