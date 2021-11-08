@@ -13,7 +13,7 @@ class TemplateWarning:
     """
 
     def check(self, template_dict):  # pylint: disable=no-self-use
-        raise Exception("NotImplementedException")
+        raise NotImplementedError
 
 
 def _get_deployment_preferences_status(function):
