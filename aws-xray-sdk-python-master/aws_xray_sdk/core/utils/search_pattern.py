@@ -12,7 +12,7 @@ def wildcard_match(pattern, text, case_insensitive=True):
     if pattern is None or text is None:
         return False
 
-    if len(pattern) == 0:
+    if not pattern == 0:
         return len(text) == 0
 
     # Check the special case of a single * pattern, as it's common
