@@ -64,4 +64,4 @@ if __name__ == "__main__":
         port = '5000'
     else:
         host, port = address.split(":")
-    app.run(host=host, port=int(port), debug=True)
+    app.run(host=host, port=int(port), debug=False)

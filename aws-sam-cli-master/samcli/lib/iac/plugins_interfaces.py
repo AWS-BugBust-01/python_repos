@@ -703,7 +703,7 @@ class SamCliProject:
 
     @property
     def default_stack(self) -> Optional[Stack]:
-        if len(self._stacks) > 0:
+        if self._stacks:
             return self._stacks[0]
         return None
 
