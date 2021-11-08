@@ -414,7 +414,7 @@ class LayerDeploymentPackager(BaseLambdaDeploymentPackager):
         else:
             contents = cast(bytes, self._osutils.get_file_contents(
                 requirements_filename, binary=True))
-        h = hashlib.md5(contents)
+        h = hashlib.sha256(contents)
         vendor_dir = self._osutils.joinpath(project_dir, self._VENDOR_DIR)
         if self._osutils.directory_exists(vendor_dir):
             self._hash_vendor_dir(vendor_dir, h)
