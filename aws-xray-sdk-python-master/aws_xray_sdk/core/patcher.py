@@ -41,6 +41,9 @@ NO_DOUBLE_PATCH = (
     'sqlalchemy_core',
 )
 
+class PatchingException(Exception):
+    pass 
+
 _PATCHED_MODULES = set()
 
 
@@ -181,7 +184,7 @@ def _on_import(module):
 
 def _external_module_patch(module, ignore_module_patterns):
     if module.startswith('.'):
-        raise Exception('relative packages not supported for patching: {}'.format(module))
+        raise PatchingException('relative packages not supported for patching: {}'.format(module))
 
     if module in _PATCHED_MODULES:
         log.debug('%s already patched', module)
