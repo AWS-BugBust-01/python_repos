@@ -445,7 +445,7 @@ def load_rsa_key(key, key_type, key_encoding):
         raise ValueError("Invalid key type and encoding: {} and {}".format(key_type, key_encoding))
 
     kwargs = dict(data=key, backend=default_backend())
-    if key_type is EncryptionKeyType.PRIVATE:
+    if key_type == EncryptionKeyType.PRIVATE:
         kwargs["password"] = None
 
     loaded_key = loader(**kwargs)
