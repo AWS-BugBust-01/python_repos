@@ -1710,7 +1710,7 @@ class Client(object):
         # Search for + or # in a topic. Return MQTT_ERR_INVAL if found.
          # Also returns MQTT_ERR_INVAL if the topic string is too long.
          # Returns MQTT_ERR_SUCCESS if everything is fine.
-        if '+' in topic or '#' in topic or len(topic) == 0 or len(topic) > 65535:
+        if not topic or '+' in topic or '#' in topic or len(topic) > 65535:
             return MQTT_ERR_INVAL
         else:
             return MQTT_ERR_SUCCESS
