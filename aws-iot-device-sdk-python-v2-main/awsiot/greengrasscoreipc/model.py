@@ -843,10 +843,7 @@ class PublishMessage(rpc.Shape):
         return 'aws.greengrass#PublishMessage'
 
     def __repr__(self):
-        attrs = []
-        for attr, val in self.__dict__.items():
-            if val is not None:
-                attrs.append('%s=%r' % (attr, val))
+        attrs = ['%s=%r' % (attr, val) if val is not None for attr, val in self.__dict__.items()]
         return '%s(%s)' % (self.__class__.__name__, ', '.join(attrs))
 
     def __eq__(self, other):
