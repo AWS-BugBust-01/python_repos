@@ -183,7 +183,7 @@ class AttributeActions(object):
         for key in keys:
             index_action = min(self.action(key), CryptoAction.SIGN_ONLY)
             try:
-                if self.attribute_actions[key] is not index_action:
+                if self.attribute_actions[key] != index_action:
                     raise InvalidArgumentError(
                         'Cannot overwrite a previously requested action on indexed attribute: "{}"'.format(key)
                     )
