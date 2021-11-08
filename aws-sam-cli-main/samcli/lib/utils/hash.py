@@ -21,7 +21,7 @@ def file_checksum(file_name: str) -> str:
 
     """
     with open(file_name, "rb") as file_handle:
-        md5 = hashlib.md5()
+        md5 = hashlib.sha256()
 
         # Save current cursor position and reset cursor to start of file
         curpos = file_handle.tell()
