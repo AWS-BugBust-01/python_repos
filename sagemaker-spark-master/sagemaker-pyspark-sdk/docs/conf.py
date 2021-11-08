@@ -17,7 +17,7 @@ VERSION_PATH = '../../VERSION'
 def read(fname):
     with open(os.path.join(os.path.dirname(__file__), fname)) as fi:
         val = fi.read()
-        
+
     return val
 
 
