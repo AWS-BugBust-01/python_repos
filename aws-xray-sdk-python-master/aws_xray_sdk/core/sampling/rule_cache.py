@@ -45,7 +45,7 @@ class RuleCache(object):
 
         # Transfer state information to refreshed rules.
         for rule in self.rules:
-            old = oldRules.get(rule.name, None)
+            old = oldRules.get(rule.name)
             if old:
                 rule.merge(old)
 
