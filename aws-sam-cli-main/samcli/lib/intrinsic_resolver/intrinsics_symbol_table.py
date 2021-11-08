@@ -411,7 +411,7 @@ class IntrinsicsSymbolTable:
         -------
         A randomized string
         """
-        return IntrinsicsSymbolTable.DEFAULT_PSEUDO_PARAM_VALUES.get(IntrinsicsSymbolTable.AWS_STACK_ID)
+        return IntrinsicsSymbolTable.DEFAULT_PSEUDO_PARAM_VALUES.get(IntrinsicsSymbolTable.AWS_STACK_ID, [default])
 
     @staticmethod
     def handle_pseudo_stack_name():
