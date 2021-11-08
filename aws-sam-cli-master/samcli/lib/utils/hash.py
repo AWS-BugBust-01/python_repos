@@ -24,7 +24,7 @@ def file_checksum(file_name: str, hash_generator: Any = None) -> str:
     """
     # Default value is set here because default values are static mutable in Python
     if not hash_generator:
-        hash_generator = hashlib.md5()
+        hash_generator = hashlib.sha256()
     with open(file_name, "rb") as file_handle:
         # Save current cursor position and reset cursor to start of file
         curpos = file_handle.tell()
