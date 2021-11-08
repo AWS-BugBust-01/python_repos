@@ -20,7 +20,10 @@ requires = [
 
 def get_version():
     with open(os.path.join(ROOT,'greengrasssdk','__init__.py')) as fi:
-        init = fi.read()
+        try:
+            init = fi.read()
+        finally:
+            fi.close()
     return VERSION_RE.search(init).group(1)
 
 
