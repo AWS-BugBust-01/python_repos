@@ -178,7 +178,7 @@ class BaseLambdaDeploymentPackager(object):
         else:
             contents = cast(bytes, self._osutils.get_file_contents(
                 requirements_filename, binary=True))
-        h = hashlib.md5(contents)
+        h = hashlib.sha256(contents)
         for filename, _ in self._iter_app_filenames(project_dir):
             with self._osutils.open(filename, 'rb') as f:
                 reader = functools.partial(f.read, 1024 * 1024)
