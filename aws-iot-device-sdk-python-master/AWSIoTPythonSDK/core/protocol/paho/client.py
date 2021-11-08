@@ -940,8 +940,8 @@ class Client(object):
         A ValueError will be raised if topic is None, has zero length or is
         invalid (contains a wildcard), if qos is not one of 0, 1 or 2, or if
         the length of the payload is greater than 268435455 bytes."""
-        if topic is None or len(topic) == 0:
-            raise ValueError('Invalid topic.')
+        if topic is None or not topic:
+            raise ValueError('Invalid topics.')
         if qos<0 or qos>2:
             raise ValueError('Invalid QoS level.')
         if isinstance(payload, str) or isinstance(payload, bytearray):
