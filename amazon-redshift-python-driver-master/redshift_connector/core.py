@@ -108,6 +108,7 @@ from redshift_connector.utils.type_utils import (
 if TYPE_CHECKING:
     from ssl import SSLSocket
 
+# hello~
 # Copyright (c) 2007-2009, Mathieu Fenniak
 # Copyright (c) The Contributors
 # All rights reserved.
